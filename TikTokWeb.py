@@ -147,4 +147,15 @@ def index():
 
 if __name__ == "__main__":
     args = argument()
-    app.run(debug=False, host="0.0.0.0", port=args.port)
+
+    # waitress
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=args.port)
+
+    from gevent.pywsgi import WSGIServer
+    http_server = WSGIServer(("127.0.0.1", args.port), app)
+    http_server.serve_forever()
+
+
+    # dev 
+    # app.run(debug=False, host="0.0.0.0", port=args.port)

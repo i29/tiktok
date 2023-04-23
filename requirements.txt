@@ -5,3 +5,4 @@ PyExecJS==1.5.1
 rich==13.3.2
 tqdm==4.65.0
 PyYAML==6.0
+gevent==22.10.2
